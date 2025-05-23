@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <!-- 1) Apply saved theme BEFORE any CSS loads -->
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          localStorage.setItem('theme', theme);
+        }
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        } else {
+          document.documentElement.classList.remove('dark-mode');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Resume | Yatharth Garg</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="icon" href="images/thumbs/icon.png" type="image/icon type" />
+
+  <!-- 2) Main stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- 3) Theme variables, toggle & print‐button styling -->
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1f1f1f;
+      --link-color: #49bf9d;
+    }
+    html.dark-mode {
+      --bg-color: #1a1a1a;
+      --text-color: #f5f5f5;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    a {
+      color: var(--link-color);
+      transition: color 0.3s ease;
+    }
+
+    /* Theme‐toggle button */
+    #theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      cursor: pointer;
+      z-index: 9999;
+      padding: 0;
+      line-height: 1;
+    }
+    #theme-toggle:focus {
+      outline: none;
+    }
+
+    /* Header subtitle */
+    #header .subtitle {
+      font-size: 1.1em;
+      font-weight: 400;
+      opacity: 0.8;
+      text-align: right;
+      margin: 0.25em 0 0.75em;
+      color: var(--text-color);
+    }
+
+    /* Location link */
+    #header .location a {
+      color: inherit !important;
+      text-decoration: none;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+
+    /* Print‐button in Summary */
+    #summary header.major {
+      position: relative;
+    }
+    #print-resume {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      color: var(--text-color);
+      cursor: pointer;
+      padding: 0.25rem;
+      transition: color 0.2s;
+    }
+    #print-resume:hover {
+      color: var(--link-color);
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <!-- Header -->
+  <header id="header">
+    <div class="inner">
+      <a href="#" class="image avatar"><img src="images/resume.jpg" alt="" /></a>
+      <h1><strong>YATHARTH GARG</strong></h1>
+      <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p> 
+      <p class="location">
+        <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA">📍 Atlanta, Georgia, US 🇺🇸</a></p>
+      </p>
+      <h5><a href="index.html">Home</a></h5>
+      <h5><a href="work.html">Projects</a></h5>
+      <h5> <a href="resume.html">Resume</a></h5>
+  </header>
+
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" title="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Main Content -->
+  <div id="main">
+    <!-- Summary Section -->
+    <section id="summary">
+      <header class="major">
+        <h2>Summary</h2>
+        <button id="print-resume" title="Print Resume">
+          <i class="fas fa-print"></i>
+        </button>
+      </header>
+      <p>
+        I'm a Senior Principal Software Engineer with over 7 years of experience building scalable
+        cloud-native systems and leading high-impact engineering teams. My work spans full-stack
+        development, distributed architectures, and applied machine learning. At Manhattan Associates,
+        I drive the design of enterprise solutions across AWS, Java, Python, and TypeScript. I’ve
+        deployed production-grade GenAI and NLP models that improved operational efficiency and
+        user experience. I’m passionate about mentoring, performance optimization, and bridging
+        software with intelligent automation.
+      </p>
+    </section>
+
+    <!-- Experience Section -->
+        <section id="experience">
+            <header class="major">
+                <h2>Experience</h2>
+            </header>
+            <div class="features">
+
+                <article>
+                    <h3>Senior Principal Software Engineer – Manhattan Associates (Atlanta, GA)</h3>
+                    <p><em>Jan 2025 – Present</em></p>
+                    <ul>
+                        <li>Lead and mentor engineering teams on cloud‑native architecture, driving SRE best practices
+                            and automation.</li>
+                        <li>Designed GenAI solution for customer support, boosting agent efficiency by 30% and reducing
+                            response times by 40%.</li>
+                        <li>Built GCP async pipelines (Cloud Functions, Pub/Sub, Dataflow), halving processing latency
+                            under peak loads.</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Principal Software Engineer – Manhattan Associates (Atlanta, GA)</h3>
+                    <p><em>Mar 2022 – Jan 2025</em></p>
+                    <ul>
+                        <li>Developed Python/Java customizations and REST API integrations, streamlining
+                            order/payment/shipment workflows and reducing resolution times by 70%.</li>
+                        <li>Executed third‑party vendor integrations, adding $30K/mo in SaaS revenue and improving
+                            product scalability.</li>
+                        <li>Proactively reduced high‑severity incidents by 40% via real‑time monitoring with Kibana
+                            &amp; Grafana.</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>NLP Data Scientist – Verizon (Dallas, TX)</h3>
+                    <p><em>Jul 2019 – Mar 2022</em></p>
+                    <ul>
+                        <li>Built TensorFlow models to predict email escalations, cutting manual review time by 35% and
+                            false positives by 80%. </li>
+                        <li>Implemented Kafka‑based data logging and drift monitoring, reducing system anomalies by 25%.
+                        </li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Data Scientist – Acequare (Gurgaon, India)</h3>
+                    <p><em>Aug 2015 – Dec 2016</em></p>
+                    <ul>
+                        <li>Created Python ML pipelines and ensemble models, improving classification accuracy by 10%
+                            and deploying via Flask.</li>
+                        <li>Optimized Hive ETL for terabytes of data, reducing compute usage by 90% and accelerating
+                            Tableau dashboards.</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+
+    <!-- Education Section -->
+    <section id="education">
+      <header class="major">
+        <h2>Education</h2>
+      </header>
+      <ul>
+        <li><strong>MS in Computer Science</strong> – University of Texas at Arlington (Jan 2017 – Dec 2018)</li>
+        <li><strong>B.Tech in Computer Science</strong> – ITM University (Jul 2012 – May 2016)</li>
+      </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <header class="major">
+        <h2>Skills</h2>
+      </header>
+      <ul class="labeled-icons">
+        <li><span class="icon solid fa-code"></span> Python, TypeScript, Java, C++, SQL</li>
+        <li><span class="icon solid fa-cloud"></span> AWS, GCP, Kubernetes, Docker</li>
+        <li><span class="icon solid fa-robot"></span> LLMs, TensorFlow, PyTorch, Machine Learning</li>
+        <li><span class="icon solid fa-cogs"></span> CI/CD, Kibana, Kafka, REST APIs</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li><a href="https://github.com/yatharthgarg" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="files/YatharthGarg_CV.pdf" target="_blank" class="icon solid fa-file-alt"><span class="label">Resume</span></a></li>
+        <li><a href="mailto:ygarg020@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Core scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- 4) Theme toggle logic -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      const icon = toggle.querySelector('i');
+      let theme = localStorage.getItem('theme');
+      if (theme === 'dark') icon.classList.replace('fa-moon', 'fa-sun');
+      toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark-mode');
+        try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+        icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+      });
+    })();
+  </script>
+
+  <!-- 5) Print‐resume logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('print-resume');
+      if (!btn) return;
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const url = 'files/YatharthGarg_CV.pdf';
+        const iframe = document.createElement('iframe');
+        iframe.style.position = 'fixed';
+        iframe.style.width = '0';
+        iframe.style.height = '0';
+        iframe.style.border = '0';
+        iframe.src = url;
+        document.body.appendChild(iframe);
+        iframe.onload = function() {
+          try {
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+          } catch (err) {
+            window.open(url, '_blank');
+          }
+          setTimeout(() => document.body.removeChild(iframe), 1000);
+        };
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,106 +1,250 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Yatharth Garg</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="icon" href="images/thumbs/icon.png" type="image/icon type">
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/resume.jpg" alt="" /></a>
-					<h1><strong>YATHARTH GARG</strong><br />
-					Data Scientist<br /></h1>
-					<br /><h5><a href="index.html">Home</a></h5>
-					<h5><a href="work.html" style="text-decoration:none;">Work</a></h5>
-					<h5><a href="research.html">Research </a></h5>
-				</div>
-			</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yatharth Garg</title>
 
-		<!-- Main -->
-			<div id="main">
+  <!-- 1) Immediately apply saved theme BEFORE any CSS loads -->
+  <script>
+    (function() {
+      try {
+        // Use 'theme' from localStorage, or fallback to system preference
+        var theme = localStorage.getItem('theme');
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          localStorage.setItem('theme', theme);
+        }
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        } else {
+          document.documentElement.classList.remove('dark-mode');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>ABOUT ME<br /></h2>
-						</header>
+  <!-- 2) Main stylesheet -->
+   <link rel="icon" href="images/thumbs/icon.png" type="image/icon type" />
 
-                        <script>
-                            var example = ['नमस्ते', 'Hello', 'Hola', 'Salut', 'Ciao', 'Hallo','你好', 'こんにちは', 'Привет', 'مرحبا'];
-                            var gFirstTime = true;
-                            textSequence(0);
-                        
-                        
-                            function textSequence(i) {
-                                if (gFirstTime) {
-                                    timeToWait = 0;
-                                    gFirstTime = false;
-                                }
-                                else {
-                                    timeToWait = 1000;
-                                }
-                                if (example.length > i) {
-                                    setTimeout(function () {
-                                        var sequenceDiv = document.getElementById("sequence");                                                          
-                                        sequenceDiv.innerHTML = example[i];                    
-                                        textSequence(++i);
-                                    }, timeToWait); // 1 seconds (in milliseconds)
-                        
-                                } else if (example.length == i) { // Loop
-                                    textSequence(0);
-                                }
-                        
-                            }
-                        </script>
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-						<h2 id="sequence"></h2>
+  <!-- 3) Theme vars & toggle styling -->
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1f1f1f;
+      --link-color: #49bf9d;
+    }
+    html.dark-mode {
+      --bg-color: #1a1a1a;
+      --text-color: #f5f5f5;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    a {
+      color: var(--link-color);
+      transition: color 0.3s ease;
+    }
+    /* Icon‑only toggle */
+    #theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      cursor: pointer;
+      z-index: 9999;
+      padding: 0;
+      line-height: 1;
+    }
+    #theme-toggle:focus { outline: none; }
+   /* Location link */
+    #header .location a {
+      color: inherit !important;
+      text-decoration: none;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
 
-						<p>I am a Data Scientist, currently working for Verizon in Dallas, TX. I completed my Masters in Fall '18 from the University of Texas at Arlington in Computer Science specialized in Machine Learning. I like to spend my time on research in Machine Learning and Deep Learning algorithms. I have a formal industrial and academic background in Data Science/Machine Learning and love to use my multi-disciplinary skills on challenging problems. 
-                            <br /> I love to cook, watch movies and TV shows, watch and keep track of sports mainly Basketball, Cricket, Tennis and Football (Soccer for my North American folks).
-                            <br />Reading Interests - Biographies, Historical, Self-Improvement, Mythology/Fantasy
-                        </p>
-                        <h5 class="icon solid fa-book"> Currently Reading - The Black Presidency: Barack Obama and the Politics of Race in America by Dr. Michael Eric Dyson</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/bp.jpg" alt="" /></span>
-									</div>
-								</div>
-								<h6>&copy; Google Images</h6>
-							</div>
-					</section>
+<body class="is-preload">
 
-			</div>
+  <!-- Header -->
+  <header id="header">
+    <div class="inner">
+      <a href="#" class="image avatar"><img src="images/resume.jpg" alt="" /></a>
+      <h1><strong>YATHARTH GARG</strong></h1>
+      <!-- <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p>  -->
+      <p class="location">
+        <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA">📍 Atlanta, Georgia, US 🇺🇸</a></p>
+      </p>
+      <h5><a href="index.html">Home</a></h5>
+      <h5><a href="work.html">Projects</a></h5>
+      <h5> <a href="resume.html">Resume</a></h5>
+  </header>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.github.com/yatharthgarg" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/yatharthgarg/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="files/YatharthGarg_CV.pdf" target="_blank" class="icon solid fa-file-alt"><span class="label">Resume</span></a></li>
-						<li><a href="mailto:ygarg020@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://www.instagram.com/yatharthgarg/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-				</div>
-			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/custom.js"></script>
+  <!-- 2) Theme toggle button (icon only) -->
+  <button id="theme-toggle" title="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
 
-	</body>
+  <!-- Main Content -->
+  <div id="main">
+
+    <!-- One -->
+    <section id="one">
+      <header class="major">
+        <h2 id="about-animated"></h2>
+        <h2 id="sequence" style="font-size:1.75em; font-weight:normal; margin-top:0.2em;"></h2>
+      </header>
+      <script>
+        // Animate 'Learn about me!' word by word
+        const aboutWords = ["Learn", "about", "me!"];
+        const aboutElem = document.getElementById("about-animated");
+        let aboutIdx = 0;
+        function showNextWord() {
+          if (aboutIdx < aboutWords.length) {
+            aboutElem.innerHTML += (aboutIdx > 0 ? " " : "") + `<span style='opacity:0;display:inline-block;transform:translateY(10px);transition:all 0.25s;'>${aboutWords[aboutIdx]}</span>`;
+            setTimeout(() => {
+              const spans = aboutElem.querySelectorAll('span');
+              spans[aboutIdx].style.opacity = 1;
+              spans[aboutIdx].style.transform = 'translateY(0)';
+              aboutIdx++;
+              setTimeout(showNextWord, 120);
+            }, 10);
+          }
+        }
+        showNextWord();
+
+        // Animated hellos
+        var example = ['Hello','नमस्ते','Hola','Salut','Ciao','Hallo','你好','こんにちは','Привет','안녕하세요','Olá'];
+        var gFirstTime = true;
+        textSequence(0);
+        function textSequence(i) {
+          var timeToWait = gFirstTime ? 0 : 1000;
+          gFirstTime = false;
+          if (example.length > i) {
+            setTimeout(function() {
+              document.getElementById("sequence").innerHTML = example[i];
+              textSequence(++i);
+            }, timeToWait);
+          } else {
+            textSequence(0);
+          }
+        }
+      </script>
+
+      <p>
+        <!-- Senior Principal Software Engineer with extensive experience designing and delivering scalable, high-impact software systems. At Manhattan Associates, I lead cross-functional teams to build robust solutions across cloud-native platforms, integrating technologies like AWS, Java, Python, and TypeScript.<br>
+        My work spans full-stack development, system architecture, and applied machine learning, including the successful deployment of a GenAI-powered solution that boosted customer service efficiency by 30%.<br>
+        Previously, I worked as a Data Scientist with a focus on natural language processing, where I developed and productionized machine learning models for enterprise-scale applications. I’m passionate about building resilient systems, mentoring engineers, and driving adoption of AI and modern development practices across teams.<br><br>
+        I love to cook, watch movies and TV shows, and keep track of sports—mainly Basketball, Cricket, Tennis, and Football (Soccer for my North American folks).<br>
+        Reading Interests: Biographies, Historical, Self‑Improvement. -->
+        Senior Principal Software Engineer -> Manhattan Associates<br>
+        delhi • dallas • atlanta<br>
+        7+ years in machine learning and software engineering<br>
+        coffee • coding • basketball • tennis<br>
+      </p>
+    </section>
+
+    <!-- Rolling Counter -->
+    <div id="views-section" style="text-align:center; margin:40px 0 0 0;">
+      <h3 style="margin-bottom:10px; color:#888;">Visitors</h3>
+      <div id="rolling-counter" style="font-size:2.5em; font-weight:bold; color:#444; letter-spacing:0.1em;">0</div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li><a href="https://github.com/yatharthgarg" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="files/YatharthGarg_CV.pdf" target="_blank" class="icon solid fa-file-alt"><span class="label">Resume</span></a></li>
+        <li><a href="mailto:ygarg020@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- GoatCounter tracking -->
+  <script data-goatcounter="https://yatharthgarg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+  <!-- Rolling counter animation -->
+  <script>
+    function animateCounter(el, start, end, dur) {
+      let t0 = null;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        const prog = Math.min((ts - t0) / dur, 1);
+        el.textContent = Math.floor(prog * (end - start) + start).toLocaleString();
+        if (prog < 1) window.requestAnimationFrame(step);
+        else el.textContent = end.toLocaleString();
+      }
+      window.requestAnimationFrame(step);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("https://yatharthgarg.goatcounter.com/api/v0/stats")
+        .then(r => r.json())
+        .then(d => {
+          const total = d.totals?.["/"]?.count || 0;
+          animateCounter(document.getElementById('rolling-counter'), 0, total, 1200);
+        })
+        .catch(() => document.getElementById('rolling-counter').textContent = '0');
+    });
+  </script>
+
+  <!-- 4) Theme toggle logic -->
+  <script>
+    (function() {
+      const toggle = document.getElementById('theme-toggle');
+      const icon   = toggle.querySelector('i');
+
+      // Set initial icon
+      var theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+      }
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+
+      toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark-mode');
+        try {
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        } catch (e) {}
+        // Swap icon
+        if (isDark) {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        } else {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        }
+      });
+    })();
+  </script>
+</body>
 </html>

@@ -1,49 +1,252 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Yatharth Garg</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/resume.jpg" alt="" /></a>
-					<h1><strong>YATHARTH GARG</strong><br />
-					Data Scientist<br /></h1>
-					<br /><h5><a href="index.html">Home</a></h5>
-					<h5><a href="work.html" style="text-decoration:none;">Work</a></h5>
-					<h5><a href="research.html">Research </a></h5>
-				</div>
-			</header>
-			
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.github.com/yatharthgarg" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/yatharthgarg/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="files/YatharthGarg_CV.pdf" class="icon solid fa-file-alt"><span class="label">Resume</span></a></li>
-						<li><a href="mailto:ygarg020@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://www.instagram.com/yatharthgarg/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+<html lang="en">
+<head>
+  <!-- 1. Apply saved theme BEFORE any CSS loads -->
+  <script>
+    (function(){
+      try {
+        // Use 'theme' from localStorage, or fallback to system preference
+        var theme = localStorage.getItem('theme');
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          localStorage.setItem('theme', theme);
+        }
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        } else {
+          document.documentElement.classList.remove('dark-mode');
+        }
+      } catch(e){}
+    })();
+  </script>
 
-					</ul>
-				</div>
-			</footer>
+  <title>Work | Yatharth Garg</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="icon" href="images/thumbs/icon.png" type="image/icon type" />
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  <!-- 2. Main stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-	</body>
+  <!-- 3. Theme variables & toggle button styling -->
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1f1f1f;
+      --link-color: #49bf9d;
+    }
+    html.dark-mode {
+      --bg-color: #1a1a1a;
+      --text-color: #f5f5f5;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    a {
+      color: var(--link-color);
+      transition: color 0.3s ease;
+    }
+    /* Icon‑only toggle (no border) */
+    #theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      cursor: pointer;
+      z-index: 9999;
+      padding: 0;
+      line-height: 1;
+    }
+    #theme-toggle:focus {
+      outline: none;
+    }
+    /* Location link */
+    #header .location a {
+      color: inherit !important;
+      text-decoration: none;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body class="is-preload">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="inner">
+      <a href="#" class="image avatar"><img src="images/resume.jpg" alt="" /></a>
+      <h1><strong>YATHARTH GARG</strong></h1>
+      <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p> 
+      <p class="location">
+        <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA">📍 Atlanta, Georgia, US 🇺🇸</a></p>
+      </p>
+      <h5><a href="index.html">Home</a></h5>
+      <h5><a href="work.html">Projects</a></h5>
+      <h5> <a href="resume.html">Resume</a></h5>
+  </header>
+
+
+  <!-- Theme toggle button (icon-only) -->
+  <button id="theme-toggle" title="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Work Section -->
+    <section>
+      <header class="major">
+        <h2 id="work-animated"></h2>
+      </header>
+      <script>
+        // Animate 'What have I done? 😯' word by word
+        const workWords = ["What", "have", "I", "done?", "😯"];
+        const workElem = document.getElementById("work-animated");
+        let workIdx = 0;
+        function showNextWorkWord() {
+          if (workIdx < workWords.length) {
+            workElem.innerHTML += (workIdx > 0 ? " " : "") + `<span style='opacity:0;display:inline-block;transform:translateY(10px);transition:all 0.25s;'>${workWords[workIdx]}</span>`;
+            setTimeout(() => {
+              const spans = workElem.querySelectorAll('span');
+              spans[workIdx].style.opacity = 1;
+              spans[workIdx].style.transform = 'translateY(0)';
+              workIdx++;
+              setTimeout(showNextWorkWord, 120);
+            }, 10);
+          }
+        }
+        showNextWorkWord();
+      </script>
+
+      <div class="features">
+
+        <!-- Project 1 -->
+        <article>
+          <h3>GenAI Customer Service Optimization</h3>
+          <p>Led the design and deployment of a Generative AI solution using Large Language Models (LLMs) for Manhattan Active clients. Integrated the system with customer support tools to generate automated replies and assist agents.</p>
+          <ul>
+            <li><strong>Tech:</strong> Python, OpenAI APIs, GCP</li>
+            <li><strong>Impact:</strong> Improved efficiency by 30%, reduced average response time by 40%</li>
+          </ul>
+        </article>
+
+        <!-- Project 2 -->
+        <article>
+          <h3>Automated Payment Issue Resolution</h3>
+          <p>Built UI tools and automation scripts to help resolve client payment issues (CyberSource, PayPal) that recovered over $3M in revenue. Focused on robust error handling and clear user workflows.</p>
+          <ul>
+            <li><strong>Tech:</strong> Python, JavaScript, REST APIs</li>
+            <li><strong>Impact:</strong> Enabled fast recovery of >$3M in lost revenue</li>
+          </ul>
+        </article>
+
+        <!-- Project 3 -->
+        <article>
+          <h3>Cloud-Native Async Processing Platform</h3>
+          <p>Implemented scalable asynchronous messaging using GCP’s Cloud Functions, Pub/Sub, and Dataflow to process large volumes of messages during traffic peaks.</p>
+          <ul>
+            <li><strong>Tech:</strong> Google Cloud, Pub/Sub, Dataflow, Cloud Functions</li>
+            <li><strong>Impact:</strong> 50% reduction in processing time, improved performance under peak loads</li>
+          </ul>
+        </article>
+
+        <!-- Project 4 -->
+        <article>
+          <h3>Email Escalation Predictor</h3>
+          <p>Developed a machine learning model to predict the likelihood of email escalation for Verizon's support teams. Integrated with dashboards and alert systems to prioritize responses.</p>
+          <ul>
+            <li><strong>Tech:</strong> Python, TensorFlow, NLP, Tableau</li>
+            <li><strong>Impact:</strong> Reduced management review time by 35%, improved escalation triage accuracy</li>
+          </ul>
+        </article>
+
+        <!-- Project 5 -->
+        <article>
+          <h3>Data Drift Monitoring & Alerting</h3>
+          <p>Built a Kafka and Kibana-based pipeline to detect and alert on data drift in machine learning inputs. Enabled proactive issue detection and model monitoring in production.</p>
+          <ul>
+            <li><strong>Tech:</strong> Kafka, Kibana, Python</li>
+            <li><strong>Impact:</strong> Reduced system anomalies by 25%</li>
+          </ul>
+        </article>
+
+        <!-- Project 6 -->
+        <article>
+          <h3>Speech Accent Recognition</h3>
+          <p>Built a deep learning pipeline to classify English-speaking accents using audio samples. Performed audio preprocessing, feature extraction (MFCC), and trained a neural network to identify regional accents from speech clips.</p>
+          <ul>
+            <li><strong>Tech:</strong> Python, TensorFlow, Librosa, MFCC, CNNs</li>
+            <li><strong>Impact:</strong> Achieved over 85% accuracy on 14-class classification using the Speech Accent Archive dataset</li>
+            <li><a href="https://github.com/yatharthgarg/Speech-Accent-Recognition" target="_blank">View on GitHub</a></li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li><a href="https://github.com/yatharthgarg" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="files/YatharthGarg_CV.pdf" target="_blank" class="icon solid fa-file-alt"><span class="label">Resume</span></a></li>
+        <li><a href="mailto:ygarg020@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Core scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- 4. Theme toggle logic -->
+  <script>
+    (function() {
+      const toggle = document.getElementById('theme-toggle');
+      const icon   = toggle.querySelector('i');
+
+      // Set initial icon
+      var theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+      }
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+
+      toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark-mode');
+        try {
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        } catch(e){}
+        // Swap moon/sun
+        if (isDark) {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        } else {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        }
+      });
+    })();
+  </script>
+</body>
 </html>
