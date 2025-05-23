@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,7 +8,7 @@
 
   <!-- 1) Immediately apply saved theme BEFORE any CSS loads -->
   <script>
-    (function() {
+    (function () {
       try {
         var theme = localStorage.getItem('theme');
         if (!theme) {
@@ -15,7 +16,7 @@
           localStorage.setItem('theme', theme);
         }
         document.documentElement.classList.toggle('dark-mode', theme === 'dark');
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
 
@@ -30,31 +31,48 @@
       --text-color: #1f1f1f;
       --link-color: #49bf9d;
     }
+
     html.dark-mode {
       --bg-color: #1a1a1a;
       --text-color: #f5f5f5;
     }
+
     body {
       background: var(--bg-color);
       color: var(--text-color);
       transition: background 0.3s ease, color 0.3s ease;
     }
-    a { color: var(--link-color); transition: color 0.3s ease; }
+
+    a {
+      color: var(--link-color);
+      transition: color 0.3s ease;
+    }
 
     /* Icon‑only theme toggle */
     #theme-toggle {
-      position: fixed; top:1rem; right:1rem;
-      background: none; border: none;
-      font-size:1.5rem; color:var(--text-color);
-      cursor:pointer; z-index:9999; padding:0; line-height:1;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      cursor: pointer;
+      z-index: 9999;
+      padding: 0;
+      line-height: 1;
     }
-    #theme-toggle:focus { outline: none; }
+
+    #theme-toggle:focus {
+      outline: none;
+    }
 
     /* Header location link */
     #header .location a {
       color: inherit !important;
       text-decoration: none;
-      font-size:0.9em; opacity:0.8;
+      font-size: 0.9em;
+      opacity: 0.8;
     }
   </style>
 </head>
@@ -64,13 +82,15 @@
   <!-- Header -->
   <header id="header">
     <div class="inner">
-      <a href="#" class="image avatar"><img src="images/resume.jpg" alt="" /></a>
+      <a href="#" class="image avatar"><img src="../images/resume.jpg" alt="" /></a>
       <h1><strong>YATHARTH GARG</strong></h1>
+      <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p>
+      <p class="location">
       <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA">📍 Atlanta, Georgia, US 🇺🇸</a></p>
+      </p>
       <h5><a href="/">Home</a></h5>
       <h5><a href="/projects/">Projects</a></h5>
-      <h5><a href="/resume/">Resume</a></h5>
-    </div>
+      <h5> <a href="/resume/">Resume</a></h5>
   </header>
 
   <!-- Theme toggle button -->
@@ -90,35 +110,35 @@
 
       <script>
         // Animate "Learn about me!"
-        const aboutWords = ["Learn","about","me!"];
-        const aboutElem  = document.getElementById("about-animated");
-        let   aboutIdx   = 0;
-        function showNextWord(){
-          if(aboutIdx < aboutWords.length){
-            aboutElem.innerHTML += (aboutIdx? " ":"") +
+        const aboutWords = ["Learn", "about", "me!"];
+        const aboutElem = document.getElementById("about-animated");
+        let aboutIdx = 0;
+        function showNextWord() {
+          if (aboutIdx < aboutWords.length) {
+            aboutElem.innerHTML += (aboutIdx ? " " : "") +
               `<span style="opacity:0;display:inline-block;transform:translateY(10px);transition:all .25s;">${aboutWords[aboutIdx]}</span>`;
-            setTimeout(()=>{
+            setTimeout(() => {
               const spans = aboutElem.querySelectorAll("span");
               spans[aboutIdx].style.opacity = 1;
               spans[aboutIdx].style.transform = "translateY(0)";
               aboutIdx++;
-              setTimeout(showNextWord,120);
-            },10);
+              setTimeout(showNextWord, 120);
+            }, 10);
           }
         }
         showNextWord();
 
         // Animated hellos
-        const hellos = ['Hello','नमस्ते','Hola','Salut','Ciao','Hallo','你好','こんにちは','Привет','안녕하세요','Olá'];
+        const hellos = ['Hello', 'नमस्ते', 'Hola', 'Salut', 'Ciao', 'Hallo', '你好', 'こんにちは', 'Привет', '안녕하세요', 'Olá'];
         let seqFirst = true;
-        function textSequence(i){
+        function textSequence(i) {
           const seqEl = document.getElementById("sequence");
           const delay = seqFirst ? 0 : 1000;
           seqFirst = false;
-          if(i < hellos.length){
-            setTimeout(()=>{
+          if (i < hellos.length) {
+            setTimeout(() => {
               seqEl.textContent = hellos[i];
-              textSequence(i+1);
+              textSequence(i + 1);
             }, delay);
           } else textSequence(0);
         }
@@ -132,45 +152,18 @@
         coffee • coding • basketball • tennis<br>
       </p>
     </section>
-
-    <!-- Total viewers badge (no CORS, pure image) -->
-   <!-- Total viewers counter -->
-<!-- Total viewers counter -->
-<!-- <div id="views-section" style="text-align:center; margin:40px 0 0 0;">
-  <h3 style="margin-bottom:10px; color:#888;">Total viewers</h3>
-  <div id="rolling-counter" style="font-size:2.5em; font-weight:bold; color:#444; letter-spacing:0.1em;">
-    …loading…
-  </div>
-</div>
-
-<script>
-// this function gets invoked by the JSONP response
-function countCallback(data) {
-  document.getElementById('rolling-counter').textContent =
-    (data.value || 0).toLocaleString();
-}
-
-// insert a <script> tag pointing at the JSONP URL
-;(function(){
-  var s = document.createElement('script');
-  // Replace "yatharthgarg-github-io" and "home" with your own namespace/key if you prefer
-  s.src = 'https://api.countapi.xyz/hit/yatharthgarg.github.io/?callback=countCallback';
-  s.async = true;
-  document.body.appendChild(s);
-})();
-</script> -->
-
-
-
   </div>
 
   <!-- Footer -->
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
-        <li><a href="https://github.com/yatharthgarg" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="https://linkedin.com/in/yatharthgarg" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="files/YatharthGarg_CV.pdf" class="icon solid fa-file-alt"><span class="label">Resume</span></a></li>
+        <li><a href="https://github.com/yatharthgarg" class="icon brands fa-github"><span
+              class="label">GitHub</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" class="icon brands fa-linkedin"><span
+              class="label">LinkedIn</span></a></li>
+        <li><a href="files/YatharthGarg_CV.pdf" class="icon solid fa-file-alt"><span class="label">Resume</span></a>
+        </li>
         <li><a href="mailto:ygarg020@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </div>
@@ -186,17 +179,18 @@ function countCallback(data) {
 
   <!-- Theme toggle logic -->
   <script>
-    (function(){
+    (function () {
       const toggle = document.getElementById("theme-toggle"),
-            icon   = toggle.querySelector("i"),
-            isDark = document.documentElement.classList.contains("dark-mode");
-      if(isDark) icon.classList.replace("fa-moon","fa-sun");
-      toggle.addEventListener("click", ()=>{
+        icon = toggle.querySelector("i"),
+        isDark = document.documentElement.classList.contains("dark-mode");
+      if (isDark) icon.classList.replace("fa-moon", "fa-sun");
+      toggle.addEventListener("click", () => {
         const nowDark = document.documentElement.classList.toggle("dark-mode");
-        localStorage.setItem("theme", nowDark?"dark":"light");
-        icon.classList.replace(nowDark?"fa-moon":"fa-sun", nowDark?"fa-sun":"fa-moon");
+        localStorage.setItem("theme", nowDark ? "dark" : "light");
+        icon.classList.replace(nowDark ? "fa-moon" : "fa-sun", nowDark ? "fa-sun" : "fa-moon");
       });
     })();
   </script>
 </body>
+
 </html>

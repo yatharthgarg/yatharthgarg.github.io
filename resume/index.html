@@ -4,6 +4,7 @@ permalink: /resume/
 
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
   <!-- 1) Apply saved theme BEFORE any CSS loads -->
   <script>
@@ -19,7 +20,7 @@ permalink: /resume/
         } else {
           document.documentElement.classList.remove('dark-mode');
         }
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
 
@@ -38,15 +39,18 @@ permalink: /resume/
       --text-color: #1f1f1f;
       --link-color: #49bf9d;
     }
+
     html.dark-mode {
       --bg-color: #1a1a1a;
       --text-color: #f5f5f5;
     }
+
     body {
       background: var(--bg-color);
       color: var(--text-color);
       transition: background 0.3s ease, color 0.3s ease;
     }
+
     a {
       color: var(--link-color);
       transition: color 0.3s ease;
@@ -66,6 +70,7 @@ permalink: /resume/
       padding: 0;
       line-height: 1;
     }
+
     #theme-toggle:focus {
       outline: none;
     }
@@ -92,6 +97,7 @@ permalink: /resume/
     #summary header.major {
       position: relative;
     }
+
     #print-resume {
       position: absolute;
       top: 0;
@@ -104,6 +110,7 @@ permalink: /resume/
       padding: 0.25rem;
       transition: color 0.2s;
     }
+
     #print-resume:hover {
       color: var(--link-color);
     }
@@ -116,9 +123,9 @@ permalink: /resume/
     <div class="inner">
       <a href="#" class="image avatar"><img src="../images/resume.jpg" alt="" /></a>
       <h1><strong>YATHARTH GARG</strong></h1>
-      <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p> 
+      <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p>
       <p class="location">
-        <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA">📍 Atlanta, Georgia, US 🇺🇸</a></p>
+      <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA">📍 Atlanta, Georgia, US 🇺🇸</a></p>
       </p>
       <h5><a href="/">Home</a></h5>
       <h5><a href="/projects/">Projects</a></h5>
@@ -153,62 +160,62 @@ permalink: /resume/
     </section>
 
     <!-- Experience Section -->
-        <section id="experience">
-            <header class="major">
-                <h2>Experience</h2>
-            </header>
-            <div class="features">
+    <section id="experience">
+      <header class="major">
+        <h2>Experience</h2>
+      </header>
+      <div class="features">
 
-                <article>
-                    <h3>Senior Principal Software Engineer – Manhattan Associates (Atlanta, GA)</h3>
-                    <p><em>Jan 2025 – Present</em></p>
-                    <ul>
-                        <li>Lead and mentor engineering teams on cloud‑native architecture, driving SRE best practices
-                            and automation.</li>
-                        <li>Designed GenAI solution for customer support, boosting agent efficiency by 30% and reducing
-                            response times by 40%.</li>
-                        <li>Built GCP async pipelines (Cloud Functions, Pub/Sub, Dataflow), halving processing latency
-                            under peak loads.</li>
-                    </ul>
-                </article>
+        <article>
+          <h3>Senior Principal Software Engineer – Manhattan Associates (Atlanta, GA)</h3>
+          <p><em>Jan 2025 – Present</em></p>
+          <ul>
+            <li>Lead and mentor engineering teams on cloud‑native architecture, driving SRE best practices
+              and automation.</li>
+            <li>Designed GenAI solution for customer support, boosting agent efficiency by 30% and reducing
+              response times by 40%.</li>
+            <li>Built GCP async pipelines (Cloud Functions, Pub/Sub, Dataflow), halving processing latency
+              under peak loads.</li>
+          </ul>
+        </article>
 
-                <article>
-                    <h3>Principal Software Engineer – Manhattan Associates (Atlanta, GA)</h3>
-                    <p><em>Mar 2022 – Jan 2025</em></p>
-                    <ul>
-                        <li>Developed Python/Java customizations and REST API integrations, streamlining
-                            order/payment/shipment workflows and reducing resolution times by 70%.</li>
-                        <li>Executed third‑party vendor integrations, adding $30K/mo in SaaS revenue and improving
-                            product scalability.</li>
-                        <li>Proactively reduced high‑severity incidents by 40% via real‑time monitoring with Kibana
-                            &amp; Grafana.</li>
-                    </ul>
-                </article>
+        <article>
+          <h3>Principal Software Engineer – Manhattan Associates (Atlanta, GA)</h3>
+          <p><em>Mar 2022 – Jan 2025</em></p>
+          <ul>
+            <li>Developed Python/Java customizations and REST API integrations, streamlining
+              order/payment/shipment workflows and reducing resolution times by 70%.</li>
+            <li>Executed third‑party vendor integrations, adding $30K/mo in SaaS revenue and improving
+              product scalability.</li>
+            <li>Proactively reduced high‑severity incidents by 40% via real‑time monitoring with Kibana
+              &amp; Grafana.</li>
+          </ul>
+        </article>
 
-                <article>
-                    <h3>NLP Data Scientist – Verizon (Dallas, TX)</h3>
-                    <p><em>Jul 2019 – Mar 2022</em></p>
-                    <ul>
-                        <li>Built TensorFlow models to predict email escalations, cutting manual review time by 35% and
-                            false positives by 80%. </li>
-                        <li>Implemented Kafka‑based data logging and drift monitoring, reducing system anomalies by 25%.
-                        </li>
-                    </ul>
-                </article>
+        <article>
+          <h3>NLP Data Scientist – Verizon (Dallas, TX)</h3>
+          <p><em>Jul 2019 – Mar 2022</em></p>
+          <ul>
+            <li>Built TensorFlow models to predict email escalations, cutting manual review time by 35% and
+              false positives by 80%. </li>
+            <li>Implemented Kafka‑based data logging and drift monitoring, reducing system anomalies by 25%.
+            </li>
+          </ul>
+        </article>
 
-                <article>
-                    <h3>Data Scientist – Acequare (Gurgaon, India)</h3>
-                    <p><em>Aug 2015 – Dec 2016</em></p>
-                    <ul>
-                        <li>Created Python ML pipelines and ensemble models, improving classification accuracy by 10%
-                            and deploying via Flask.</li>
-                        <li>Optimized Hive ETL for terabytes of data, reducing compute usage by 90% and accelerating
-                            Tableau dashboards.</li>
-                    </ul>
-                </article>
+        <article>
+          <h3>Data Scientist – Acequare (Gurgaon, India)</h3>
+          <p><em>Aug 2015 – Dec 2016</em></p>
+          <ul>
+            <li>Created Python ML pipelines and ensemble models, improving classification accuracy by 10%
+              and deploying via Flask.</li>
+            <li>Optimized Hive ETL for terabytes of data, reducing compute usage by 90% and accelerating
+              Tableau dashboards.</li>
+          </ul>
+        </article>
 
-            </div>
-        </section>
+      </div>
+    </section>
 
 
     <!-- Education Section -->
@@ -240,9 +247,12 @@ permalink: /resume/
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
-        <li><a href="https://github.com/yatharthgarg" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="https://linkedin.com/in/yatharthgarg" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="files/YatharthGarg_CV.pdf" class="icon solid fa-file-alt"><span class="label">Resume</span></a></li>
+        <li><a href="https://github.com/yatharthgarg" class="icon brands fa-github"><span
+              class="label">GitHub</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" class="icon brands fa-linkedin"><span
+              class="label">LinkedIn</span></a></li>
+        <li><a href="files/YatharthGarg_CV.pdf" class="icon solid fa-file-alt"><span class="label">Resume</span></a>
+        </li>
         <li><a href="mailto:ygarg020@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </div>
@@ -265,7 +275,7 @@ permalink: /resume/
       if (theme === 'dark') icon.classList.replace('fa-moon', 'fa-sun');
       toggle.addEventListener('click', () => {
         const isDark = document.documentElement.classList.toggle('dark-mode');
-        try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+        try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) { }
         icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
       });
     })();
@@ -273,10 +283,10 @@ permalink: /resume/
 
   <!-- 5) Print‐resume logic -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const btn = document.getElementById('print-resume');
       if (!btn) return;
-      btn.addEventListener('click', function(e) {
+      btn.addEventListener('click', function (e) {
         e.preventDefault();
         const url = 'files/YatharthGarg_CV.pdf';
         const iframe = document.createElement('iframe');
@@ -286,7 +296,7 @@ permalink: /resume/
         iframe.style.border = '0';
         iframe.src = url;
         document.body.appendChild(iframe);
-        iframe.onload = function() {
+        iframe.onload = function () {
           try {
             iframe.contentWindow.focus();
             iframe.contentWindow.print();
@@ -299,4 +309,5 @@ permalink: /resume/
     });
   </script>
 </body>
+
 </html>
