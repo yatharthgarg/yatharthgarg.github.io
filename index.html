@@ -74,6 +74,24 @@
       font-size: 0.9em;
       opacity: 0.8;
     }
+
+    #about-animated {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: monospace;
+    }
+
+    #about-animated .cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
@@ -86,7 +104,8 @@
       <h1><strong>YATHARTH GARG</strong></h1>
       <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p>
       <p class="location">
-      <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA" target="_blank" rel="noopener noreferrer">📍 Atlanta, Georgia, US 🇺🇸</a></p>
+      <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA" target="_blank"
+          rel="noopener noreferrer">📍 Atlanta, Georgia, US 🇺🇸</a></p>
       </p>
       <h5><a href="/">Home</a></h5>
       <h5><a href="/projects/">Projects</a></h5>
@@ -110,23 +129,50 @@
 
       <script>
         // Animate "Learn about me!"
-        const aboutWords = ["Learn", "about", "me!", "👀"];
-        const aboutElem = document.getElementById("about-animated");
-        let aboutIdx = 0;
-        function showNextWord() {
-          if (aboutIdx < aboutWords.length) {
-            aboutElem.innerHTML += (aboutIdx ? " " : "") +
-              `<span style="opacity:0;display:inline-block;transform:translateY(10px);transition:all .25s;">${aboutWords[aboutIdx]}</span>`;
-            setTimeout(() => {
-              const spans = aboutElem.querySelectorAll("span");
-              spans[aboutIdx].style.opacity = 1;
-              spans[aboutIdx].style.transform = "translateY(0)";
-              aboutIdx++;
-              setTimeout(showNextWord, 120);
-            }, 10);
+        // const aboutWords = ["Learn", "about", "me!", "👀"];
+        // const aboutElem = document.getElementById("about-animated");
+        // let aboutIdx = 0;
+        // function showNextWord() {
+        //   if (aboutIdx < aboutWords.length) {
+        //     aboutElem.innerHTML += (aboutIdx ? " " : "") +
+        //       `<span style="opacity:0;display:inline-block;transform:translateY(10px);transition:all .25s;">${aboutWords[aboutIdx]}</span>`;
+        //     setTimeout(() => {
+        //       const spans = aboutElem.querySelectorAll("span");
+        //       spans[aboutIdx].style.opacity = 1;
+        //       spans[aboutIdx].style.transform = "translateY(0)";
+        //       aboutIdx++;
+        //       setTimeout(showNextWord, 120);
+        //     }, 10);
+        //   }
+        // }
+        // showNextWord();
+        (function () {
+          const text = "Learn about me! 👀";
+          const el = document.getElementById("about-animated");
+          let i = 0;
+
+          function typeChar() {
+            // remove any existing cursor
+            const existing = el.querySelector(".cursor");
+            if (existing) existing.remove();
+
+            // add next character
+            el.textContent = text.slice(0, i);
+
+            // re‑append blinking cursor
+            const cursor = document.createElement("span");
+            cursor.className = "cursor";
+            cursor.textContent = "|";
+            el.appendChild(cursor);
+
+            if (i++ < text.length) {
+              setTimeout(typeChar, 75); // typing speed: 100ms per char
+            }
+            // when done, cursor stays blinking
           }
-        }
-        showNextWord();
+
+          typeChar();
+        })();
 
         // Animated hellos
         const hellos = ['Hello', 'नमस्ते', 'Hola', 'Salut', 'Ciao', 'Hallo', '你好', 'こんにちは', 'Привет', '안녕하세요', 'Olá'];
@@ -158,13 +204,15 @@
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
-        <li><a href="https://github.com/yatharthgarg" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span
-              class="label">GitHub</span></a></li>
-        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span
-              class="label">LinkedIn</span></a></li>
-        <li><a href="files/YatharthGarg_CV.pdf" target="_blank" rel="noopener noreferrer" class="icon solid fa-file-alt"><span class="label">Resume</span></a>
+        <li><a href="https://github.com/yatharthgarg" target="_blank" rel="noopener noreferrer"
+            class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" rel="noopener noreferrer"
+            class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="files/YatharthGarg_CV.pdf" target="_blank" rel="noopener noreferrer"
+            class="icon solid fa-file-alt"><span class="label">Resume</span></a>
         </li>
-        <li><a href="mailto:ygarg020@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        <li><a href="mailto:ygarg020@gmail.com" target="_blank" rel="noopener noreferrer"
+            class="icon solid fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </div>
   </footer>

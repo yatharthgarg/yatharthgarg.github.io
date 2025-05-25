@@ -82,6 +82,24 @@ permalink: /projects/
       font-size: 0.9em;
       opacity: 0.8;
     }
+
+    #work-animated {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: monospace;
+    }
+
+    #work-animated .cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
@@ -94,7 +112,8 @@ permalink: /projects/
       <h1><strong>YATHARTH GARG</strong></h1>
       <p style="color: #a2a2a2;"> Software Engineer / Machine Learning</p>
       <p class="location">
-      <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA" target="_blank" rel="noopener noreferrer">📍 Atlanta, Georgia, US 🇺🇸</a></p>
+      <p class="location"><a href="https://www.google.com/search?q=Atlanta%2C+GA" target="_blank"
+          rel="noopener noreferrer">📍 Atlanta, Georgia, US 🇺🇸</a></p>
       </p>
       <h5><a href="/">Home</a></h5>
       <h5><a href="/projects/">Projects</a></h5>
@@ -117,22 +136,50 @@ permalink: /projects/
       </header>
       <script>
         // Animate 'What have I done? 😯' word by word
-        const workWords = ["What", "have", "I", "done?", "😯"];
-        const workElem = document.getElementById("work-animated");
-        let workIdx = 0;
-        function showNextWorkWord() {
-          if (workIdx < workWords.length) {
-            workElem.innerHTML += (workIdx > 0 ? " " : "") + `<span style='opacity:0;display:inline-block;transform:translateY(10px);transition:all 0.25s;'>${workWords[workIdx]}</span>`;
-            setTimeout(() => {
-              const spans = workElem.querySelectorAll('span');
-              spans[workIdx].style.opacity = 1;
-              spans[workIdx].style.transform = 'translateY(0)';
-              workIdx++;
-              setTimeout(showNextWorkWord, 120);
-            }, 10);
+        // const workWords = ["What", "have", "I", "done?", "😯"];
+        // const workElem = document.getElementById("work-animated");
+        // let workIdx = 0;
+        // function showNextWorkWord() {
+        //   if (workIdx < workWords.length) {
+        //     workElem.innerHTML += (workIdx > 0 ? " " : "") + `<span style='opacity:0;display:inline-block;transform:translateY(10px);transition:all 0.25s;'>${workWords[workIdx]}</span>`;
+        //     setTimeout(() => {
+        //       const spans = workElem.querySelectorAll('span');
+        //       spans[workIdx].style.opacity = 1;
+        //       spans[workIdx].style.transform = 'translateY(0)';
+        //       workIdx++;
+        //       setTimeout(showNextWorkWord, 120);
+        //     }, 10);
+        //   }
+        // }
+        // showNextWorkWord();
+        (function () {
+          const text = "What have I done? 😯";
+          const el = document.getElementById("work-animated");
+          let i = 0;
+
+          function typeChar() {
+            // remove any existing cursor
+            const existing = el.querySelector(".cursor");
+            if (existing) existing.remove();
+
+            // add next character
+            el.textContent = text.slice(0, i);
+
+            // re‑append blinking cursor
+            const cursor = document.createElement("span");
+            cursor.className = "cursor";
+            cursor.textContent = "|";
+            el.appendChild(cursor);
+
+            if (i++ < text.length) {
+              setTimeout(typeChar, 75); // typing speed: 100ms per char
+            }
+            // when done, cursor stays blinking
           }
-        }
-        showNextWorkWord();
+
+          typeChar();
+        })();
+
       </script>
 
       <div class="features">
@@ -217,13 +264,15 @@ permalink: /projects/
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
-        <li><a href="https://github.com/yatharthgarg" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span
-              class="label">GitHub</span></a></li>
-        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span
-              class="label">LinkedIn</span></a></li>
-        <li><a href="../files/YatharthGarg_CV.pdf" target="_blank" rel="noopener noreferrer" class="icon solid fa-file-alt"><span class="label">Resume</span></a>
+        <li><a href="https://github.com/yatharthgarg" target="_blank" rel="noopener noreferrer"
+            class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" rel="noopener noreferrer"
+            class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="../files/YatharthGarg_CV.pdf" target="_blank" rel="noopener noreferrer"
+            class="icon solid fa-file-alt"><span class="label">Resume</span></a>
         </li>
-        <li><a href="mailto:ygarg020@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        <li><a href="mailto:ygarg020@gmail.com" target="_blank" rel="noopener noreferrer"
+            class="icon solid fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </div>
   </footer>
