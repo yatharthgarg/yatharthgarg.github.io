@@ -121,60 +121,36 @@ permalink: /projects/
   </header>
 
 
-  <!-- Theme toggle button (icon-only) -->
   <button id="theme-toggle" title="Toggle dark mode">
     <i class="fas fa-moon"></i>
   </button>
 
-  <!-- Main -->
   <div id="main">
 
-    <!-- Work Section -->
     <section>
       <header class="major">
         <h2 id="work-animated"></h2>
       </header>
       <script>
-        // Animate 'What have I done? 😯' word by word
-        // const workWords = ["What", "have", "I", "done?", "😯"];
-        // const workElem = document.getElementById("work-animated");
-        // let workIdx = 0;
-        // function showNextWorkWord() {
-        //   if (workIdx < workWords.length) {
-        //     workElem.innerHTML += (workIdx > 0 ? " " : "") + `<span style='opacity:0;display:inline-block;transform:translateY(10px);transition:all 0.25s;'>${workWords[workIdx]}</span>`;
-        //     setTimeout(() => {
-        //       const spans = workElem.querySelectorAll('span');
-        //       spans[workIdx].style.opacity = 1;
-        //       spans[workIdx].style.transform = 'translateY(0)';
-        //       workIdx++;
-        //       setTimeout(showNextWorkWord, 120);
-        //     }, 10);
-        //   }
-        // }
-        // showNextWorkWord();
         (function () {
-          const text = "What have I done? 😯";
+          const text = "What have I done?";
           const el = document.getElementById("work-animated");
           let i = 0;
 
           function typeChar() {
-            // remove any existing cursor
             const existing = el.querySelector(".cursor");
             if (existing) existing.remove();
 
-            // add next character
             el.textContent = text.slice(0, i);
 
-            // re‑append blinking cursor
             const cursor = document.createElement("span");
             cursor.className = "cursor";
             cursor.textContent = "|";
             el.appendChild(cursor);
 
             if (i++ < text.length) {
-              setTimeout(typeChar, 60); // typing speed: 100ms per char
+              setTimeout(typeChar, 60);
             }
-            // when done, cursor stays blinking
           }
 
           typeChar();
