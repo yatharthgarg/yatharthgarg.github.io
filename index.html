@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yatharth Garg</title>
 
-  <!-- 1) Immediately apply saved theme BEFORE any CSS loads -->
   <script>
     (function () {
       try {
@@ -20,11 +19,9 @@
     })();
   </script>
 
-  <!-- 2) Favicon & main stylesheet -->
   <link rel="icon" href="images/thumbs/icon.png" type="image/icon type" />
   <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- 3) Theme vars & toggle styling -->
   <style>
     :root {
       --bg-color: #ffffff;
@@ -48,7 +45,6 @@
       transition: color 0.3s ease;
     }
 
-    /* Icon‑only theme toggle */
     #theme-toggle {
       position: fixed;
       top: 1rem;
@@ -67,7 +63,6 @@
       outline: none;
     }
 
-    /* Header location link */
     #header .location a {
       color: inherit !important;
       text-decoration: none;
@@ -97,7 +92,6 @@
 
 <body class="is-preload">
 
-  <!-- Header -->
   <header id="header">
     <div class="inner">
       <a href="#" class="image avatar"><img src="../images/resume.jpg" alt="" /></a>
@@ -174,7 +168,6 @@
     </section>
   </div>
 
-  <!-- Footer -->
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
@@ -191,7 +184,6 @@
     </div>
   </footer>
 
-  <!-- Core scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.poptrox.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
@@ -199,7 +191,6 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Theme toggle logic -->
   <script>
     (function () {
       const toggle = document.getElementById("theme-toggle"),

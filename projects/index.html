@@ -5,11 +5,9 @@ permalink: /projects/
 <html lang="en">
 
 <head>
-  <!-- 1. Apply saved theme BEFORE any CSS loads -->
   <script>
     (function () {
       try {
-        // Use 'theme' from localStorage, or fallback to system preference
         var theme = localStorage.getItem('theme');
         if (!theme) {
           theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -29,10 +27,8 @@ permalink: /projects/
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="icon" href="../images/thumbs/icon.png" type="image/icon type" />
 
-  <!-- 2. Main stylesheet -->
   <link rel="stylesheet" href="../assets/css/main.css" />
 
-  <!-- 3. Theme variables & toggle button styling -->
   <style>
     :root {
       --bg-color: #ffffff;
@@ -56,7 +52,6 @@ permalink: /projects/
       transition: color 0.3s ease;
     }
 
-    /* Icon‑only toggle (no border) */
     #theme-toggle {
       position: fixed;
       top: 1rem;
@@ -75,7 +70,6 @@ permalink: /projects/
       outline: none;
     }
 
-    /* Location link */
     #header .location a {
       color: inherit !important;
       text-decoration: none;
@@ -105,7 +99,6 @@ permalink: /projects/
 
 <body class="is-preload">
 
-  <!-- Header -->
   <header id="header">
     <div class="inner">
       <a href="#" class="image avatar"><img src="../images/resume.jpg" alt="" /></a>
@@ -160,19 +153,7 @@ permalink: /projects/
 
       <div class="features">
 
-        <!-- Project 1 -->
-        <article>
-          <h3>GenAI Customer Service Optimization</h3>
-          <p>Led the design and deployment of a Generative AI solution using Large Language Models (LLMs) for Manhattan
-            Active clients. Integrated the system with customer support tools to generate automated replies and assist
-            agents.</p>
-          <ul>
-            <li><strong>Tech:</strong> Python, OpenAI APIs, GCP</li>
-            <li><strong>Impact:</strong> Improved efficiency by 30%, reduced average response time by 40%</li>
-          </ul>
-        </article>
 
-        <!-- Project 2 -->
         <article>
           <h3>Automated Payment Issue Resolution</h3>
           <p>Built UI tools and automation scripts to help resolve client payment issues (CyberSource, PayPal) that
@@ -183,7 +164,6 @@ permalink: /projects/
           </ul>
         </article>
 
-        <!-- Project 3 -->
         <article>
           <h3>Cloud-Native Async Processing Platform</h3>
           <p>Implemented scalable asynchronous messaging using GCP’s Cloud Functions, Pub/Sub, and Dataflow to process
@@ -194,7 +174,6 @@ permalink: /projects/
           </ul>
         </article>
 
-        <!-- Project 4 -->
         <article>
           <h3>Email Escalation Predictor</h3>
           <p>Developed a machine learning model to predict the likelihood of email escalation for Verizon's support
@@ -205,7 +184,6 @@ permalink: /projects/
           </ul>
         </article>
 
-        <!-- Project 5 -->
         <article>
           <h3>Data Drift Monitoring & Alerting</h3>
           <p>Built a Kafka and Kibana-based pipeline to detect and alert on data drift in machine learning inputs.
@@ -216,7 +194,6 @@ permalink: /projects/
           </ul>
         </article>
 
-        <!-- Project 6 -->
         <article>
           <h3>Speech Accent Recognition</h3>
           <p>Built a deep learning pipeline to classify English-speaking accents using audio samples. Performed audio
@@ -236,7 +213,6 @@ permalink: /projects/
 
   </div>
 
-  <!-- Footer -->
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
@@ -253,7 +229,6 @@ permalink: /projects/
     </div>
   </footer>
 
-  <!-- Core scripts -->
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/jquery.poptrox.min.js"></script>
   <script src="../assets/js/browser.min.js"></script>
@@ -261,13 +236,11 @@ permalink: /projects/
   <script src="../assets/js/util.js"></script>
   <script src="../assets/js/main.js"></script>
 
-  <!-- 4. Theme toggle logic -->
   <script>
     (function () {
       const toggle = document.getElementById('theme-toggle');
       const icon = toggle.querySelector('i');
 
-      // Set initial icon
       var theme = localStorage.getItem('theme');
       if (!theme) {
         theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -286,7 +259,6 @@ permalink: /projects/
         try {
           localStorage.setItem('theme', isDark ? 'dark' : 'light');
         } catch (e) { }
-        // Swap moon/sun
         if (isDark) {
           icon.classList.remove('fa-moon');
           icon.classList.add('fa-sun');

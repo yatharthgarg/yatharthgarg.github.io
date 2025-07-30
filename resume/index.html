@@ -6,7 +6,6 @@ permalink: /resume/
 <html lang="en">
 
 <head>
-  <!-- 1) Apply saved theme BEFORE any CSS loads -->
   <script>
     (function () {
       try {
@@ -29,10 +28,8 @@ permalink: /resume/
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="icon" href="../images/thumbs/icon.png" type="image/icon type" />
 
-  <!-- 2) Main stylesheet -->
   <link rel="stylesheet" href="../assets/css/main.css" />
 
-  <!-- 3) Theme variables, toggle & print‐button styling -->
   <style>
     :root {
       --bg-color: #ffffff;
@@ -56,7 +53,6 @@ permalink: /resume/
       transition: color 0.3s ease;
     }
 
-    /* Theme‐toggle button */
     #theme-toggle {
       position: fixed;
       top: 1rem;
@@ -75,7 +71,6 @@ permalink: /resume/
       outline: none;
     }
 
-    /* Header subtitle */
     #header .subtitle {
       font-size: 1.1em;
       font-weight: 400;
@@ -85,7 +80,6 @@ permalink: /resume/
       color: var(--text-color);
     }
 
-    /* Location link */
     #header .location a {
       color: inherit !important;
       text-decoration: none;
@@ -93,7 +87,6 @@ permalink: /resume/
       opacity: 0.8;
     }
 
-    /* Print‐button in Summary */
     #summary header.major {
       position: relative;
     }
@@ -118,7 +111,6 @@ permalink: /resume/
 </head>
 
 <body class="is-preload">
-  <!-- Header -->
   <header id="header">
     <div class="inner">
       <a href="#" class="image avatar"><img src="../images/resume.jpg" alt="" /></a>
@@ -135,14 +127,11 @@ permalink: /resume/
   </header>
 
 
-  <!-- Theme toggle button -->
   <button id="theme-toggle" title="Toggle dark mode">
     <i class="fas fa-moon"></i>
   </button>
 
-  <!-- Main Content -->
   <div id="main">
-    <!-- Summary Section -->
     <section id="summary">
       <header class="major">
         <h2>Summary</h2>
@@ -220,7 +209,6 @@ permalink: /resume/
     </section>
 
 
-    <!-- Education Section -->
     <section id="education">
       <header class="major">
         <h2>Education</h2>
@@ -231,7 +219,6 @@ permalink: /resume/
       </ul>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
       <header class="major">
         <h2>Skills</h2>
@@ -245,22 +232,22 @@ permalink: /resume/
     </section>
   </div>
 
-  <!-- Footer -->
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
-        <li><a href="https://github.com/yatharthgarg" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span
-              class="label">GitHub</span></a></li>
-        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span
-              class="label">LinkedIn</span></a></li>
-        <li><a href="../files/YatharthGarg_CV.pdf" target="_blank" rel="noopener noreferrer" class="icon solid fa-file-alt"><span class="label">Resume</span></a>
+        <li><a href="https://github.com/yatharthgarg" target="_blank" rel="noopener noreferrer"
+            class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="https://linkedin.com/in/yatharthgarg" target="_blank" rel="noopener noreferrer"
+            class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="../files/YatharthGarg_CV.pdf" target="_blank" rel="noopener noreferrer"
+            class="icon solid fa-file-alt"><span class="label">Resume</span></a>
         </li>
-        <li><a href="mailto:ygarg020@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        <li><a href="mailto:ygarg020@gmail.com" target="_blank" rel="noopener noreferrer"
+            class="icon solid fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </div>
   </footer>
 
-  <!-- Core scripts -->
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/jquery.poptrox.min.js"></script>
   <script src="../assets/js/browser.min.js"></script>
@@ -268,7 +255,6 @@ permalink: /resume/
   <script src="../assets/js/util.js"></script>
   <script src="../assets/js/main.js"></script>
 
-  <!-- 4) Theme toggle logic -->
   <script>
     (function () {
       const toggle = document.getElementById('theme-toggle');
@@ -283,7 +269,6 @@ permalink: /resume/
     })();
   </script>
 
-  <!-- 5) Print‐resume logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const btn = document.getElementById('print-resume');
